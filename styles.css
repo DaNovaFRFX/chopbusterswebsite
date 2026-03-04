@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+h1, h2, p {
+    margin: 10px 0;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+.fadeDelay {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+/* Dark overlay for readability */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+
+.logo {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.socials {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+    .socials a {
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .socials img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .socials a:hover {
+        transform: scale(1.1);
+    }
+
+.games {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+    .games h2 {
+        margin-bottom: 40px;
+    }
+
+.gamesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gameBox {
+    background: #111;
+    border: 1px solid #222;
+    transition: 0.3s;
+    overflow: hidden;
+    text-align: left;
+}
+
+    .gameBox:hover {
+        border-color: white;
+        transform: translateY(-5px);
+    }
+
+.game-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.gameContent {
+    padding: 20px;
+}
+
+.platforms {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+    .platforms a {
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .platforms img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .platforms a:hover {
+        transform: scale(1.1);
+    }
+
+@media (max-width: 900px) {
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+}
